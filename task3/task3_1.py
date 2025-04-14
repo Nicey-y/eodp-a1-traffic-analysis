@@ -16,11 +16,8 @@ def task3_1():
 
     plt.xlabel('Year Manufactured')
     plt.ylabel('Number of crashes')
-    plt.title('Number of crashes for each unique manufacturer-body style-year combination')
+    plt.title('Number of crashes for eachunique manufacturer-body style-year combination', wrap=True)
 
-    plt.show()
-    #plt.savefig('task3_1_scatter.png')
+    plt.savefig('task3_1_scatter.png')
 
     return
-
-task3_1()

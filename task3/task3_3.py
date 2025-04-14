@@ -40,7 +40,7 @@ def task3_3():
 
     plt.xlabel('Year Manufactured')
     plt.ylabel('Number of crashes')
-    plt.title('Number of crashes for each unique manufacturer-body style-year combination')
+    plt.title('Number of crashes for each unique manufacturer-body style-year combination', wrap=True)
 
     plt.savefig('task3_3_scattercolour.png')
 
@@ -56,4 +56,3 @@ def write_to_csv(df, cluster_num):
     
     filename = 'task3_3_cluster{k}.csv'.format(k=cluster_num)
     cluster_df.head(10).to_csv(filename, index=False)
-
