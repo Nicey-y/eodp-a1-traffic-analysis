@@ -5,8 +5,7 @@ from sklearn.cluster import KMeans
 
 def task3_3():
     # Data Preparation
-    #file_path = "/course/filtered_vehicle.csv"
-    file_path = "./a1-datasets/filtered_vehicle.csv"
+    file_path = "/course/filtered_vehicle.csv"
     filtered_vehicles_df = pd.read_csv(file_path)
     cols = ['ACCIDENT_NO', "VEHICLE_YEAR_MANUF", "VEHICLE_BODY_STYLE", "VEHICLE_MAKE", 'NO_OF_WHEELS', 'NO_OF_CYLINDERS', 'SEATING_CAPACITY', 'TARE_WEIGHT', 'TOTAL_NO_OCCUPANTS']
     filtered_vehicles_df = filtered_vehicles_df[cols]
@@ -43,7 +42,6 @@ def task3_3():
     plt.ylabel('Number of crashes')
     plt.title('Number of crashes for each unique manufacturer-body style-year combination')
 
-    plt.legend()
     plt.savefig('task3_3_scattercolour.png')
 
     # Produce .csv files
@@ -59,4 +57,3 @@ def write_to_csv(df, cluster_num):
     filename = 'task3_3_cluster{k}.csv'.format(k=cluster_num)
     cluster_df.head(10).to_csv(filename, index=False)
 
-task3_3()

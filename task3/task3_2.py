@@ -7,8 +7,7 @@ from sklearn.cluster import KMeans
 
 def task3_2():
     # Data Preparation
-    # file_path = "/course/filtered_vehicle.csv"
-    file_path = "./a1-datasets/filtered_vehicle.csv"
+    file_path = "/course/filtered_vehicle.csv"
     filtered_vehicles_df = pd.read_csv(file_path)
     cols = ["VEHICLE_YEAR_MANUF", "VEHICLE_BODY_STYLE", "VEHICLE_MAKE", 'NO_OF_WHEELS', 'NO_OF_CYLINDERS', 'SEATING_CAPACITY', 'TARE_WEIGHT', 'TOTAL_NO_OCCUPANTS']
     filtered_vehicles_df = filtered_vehicles_df[cols]
@@ -21,8 +20,9 @@ def task3_2():
     # The Elbow Method
     k_ranges = range(1, 11) # for k from 1 to 10
     sse = []
+    rand_state = 20008
     for k in k_ranges:
-        kmeans = KMeans(n_clusters=k)
+        kmeans = KMeans(n_clusters=k, random_state=rand_state)
         kmeans.fit(normalised_df)
         sse.append(kmeans.inertia_)
     
@@ -33,9 +33,6 @@ def task3_2():
     plt.ylabel('Sum of Squared Error')
     plt.title('The Elbow Method')
 
-    plt.legend()
     plt.savefig('task3_2_elbow.png')
 
     return
-
-task3_2()
