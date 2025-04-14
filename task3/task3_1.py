@@ -3,8 +3,7 @@ import matplotlib.pyplot as plt
 
 def task3_1():
     # Data Grouping
-    # file_path = "/course/filtered_vehicle.csv"
-    file_path = "./a1-datasets/filtered_vehicle.csv"
+    file_path = "/course/filtered_vehicle.csv"
     filtered_vehicles_df = pd.read_csv(file_path)
     filtered_vehicles_df = filtered_vehicles_df[["ACCIDENT_NO", "VEHICLE_YEAR_MANUF", "VEHICLE_BODY_STYLE", "VEHICLE_MAKE"]]
 
@@ -19,8 +18,8 @@ def task3_1():
     plt.ylabel('Number of crashes')
     plt.title('Number of crashes for each unique manufacturer-body style-year combination')
 
-    plt.legend()
-    plt.savefig('task3_1_scatter.png')
+    plt.show()
+    #plt.savefig('task3_1_scatter.png')
 
     return
 
