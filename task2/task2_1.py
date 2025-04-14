@@ -1,6 +1,8 @@
 import pandas as pd
 from collections import defaultdict
 import re
+import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
@@ -8,7 +10,7 @@ import matplotlib.pyplot as plt
 # accident = pd.read_csv('accident_subset.csv')
 
 def task2_1():
-    accident = pd.read_csv('accident_subset.csv')
+    accident = pd.read_csv('a1-datasets/accident.csv')
     text_columns = ['ACCIDENT_TYPE_DESC', 'DAY_WEEK_DESC', 'DCA_DESC', 'ROAD_GEOMETRY_DESC', 'RMA']
 
     # convert to lower case
@@ -86,4 +88,6 @@ def task2_1():
     plt.figure(figsize=(10, 5))  # Adjust the size as needed
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')  # Turn off the axis
-    plt.show()
+    plt.savefig('task2_1_word_cloud.png')
+
+task2_1()
