@@ -19,11 +19,14 @@ def task2_2():
 
     time_occurrences_df = pd.DataFrame(list(time_occurrences.items()), columns = ['TIME_OF_DAY', 'ACCIDENT_FREQUENCY'])
 
+    time_occurrences_df = time_occurrences_df.set_index('TIME_OF_DAY')
+    time_occurrences_df = time_occurrences_df.reindex(index=['Morning', 'Afternoon', 'Evening', 'Late Night'])
+
     # bar chart
-    #plt.title("Number of accidents by Time of Day")
-    #plt.bar(time_occurrences_df['TIME_OF_DAY'], time_occurrences_df['ACCIDENT_FREQUENCY'])
-    #plt.xticks(rotation=30)
-    #plt.savefig('task2_2_timeofday.png')
+    plt.title("Number of accidents by Time of Day")
+    plt.bar(time_occurrences_df['TIME_OF_DAY'], time_occurrences_df['ACCIDENT_FREQUENCY'])
+    plt.xticks(rotation=30)
+    plt.savefig('task2_2_timeofday.png')
 
     # pie charts
 
