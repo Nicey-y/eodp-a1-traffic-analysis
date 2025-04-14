@@ -19,7 +19,7 @@ def task2_2():
 
     time_occurrences_df = pd.DataFrame(list(time_occurrences.items()), columns = ['TIME_OF_DAY', 'ACCIDENT_FREQUENCY'])
 
-    time_occurrences_df = time_occurrences_df.set_index('TIME_OF_DAY')
+    time_occurrences_df = time_occurrences_df.set_index('TIME_OF_DAY', drop=False)
     time_occurrences_df = time_occurrences_df.reindex(index=['Morning', 'Afternoon', 'Evening', 'Late Night'])
 
     # bar chart
@@ -85,13 +85,13 @@ def task2_2():
     grouped.plot(kind='bar', stacked=True, figsize=(10, 6), colormap='Set2')
 
 
-    #plt.title("Accidents by Time of Day across Days of the Week")
-    #plt.xlabel("Day of the Week")
-    #plt.ylabel("Number of Accidents")
-    #plt.xticks(rotation=45)
-    #plt.legend(title="Time of Day", bbox_to_anchor=(1.05, 1), loc='upper left')
-    #plt.tight_layout()
-    #plt.savefig('task2_2_stackbar.png')
+    plt.title("Accidents by Time of Day across Days of the Week")
+    plt.xlabel("Day of the Week")
+    plt.ylabel("Number of Accidents")
+    plt.xticks(rotation=45)
+    plt.legend(title="Time of Day", bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.tight_layout()
+    plt.savefig('task2_2_stackbar.png')
 
 # categorize accident time
 def sort_time(time):
@@ -107,8 +107,6 @@ def sort_time(time):
             return "Evening"
         else:
             return "Late Night"
-
-task2_2()
 
 
 

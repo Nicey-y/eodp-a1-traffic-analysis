@@ -34,7 +34,7 @@ def task2_1():
     # remove stop words
     stop_words = set(stopwords.words('english'))
     
-    '''
+    ''' non-accident-related terms
     stop_words = [
         'a', 'an', 'the',
         'in', 'on', 'at', 'with', 'by', 'under', 'over', 'between', 'above', 'beneath',
@@ -89,5 +89,3 @@ def task2_1():
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')  # Turn off the axis
     plt.savefig('task2_1_word_cloud.png')
-
-task2_1()

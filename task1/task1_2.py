@@ -51,7 +51,6 @@ def task1_2():
 
     # Save the plot as a PNG file
     plt.savefig('task1_2_age.png', format='png') 
-    #plt.show()
 
     
     #Task 1.2.2
@@ -86,7 +85,6 @@ def task1_2():
     plt.subplots_adjust(wspace=0.6)
     
     plt.savefig('task1_2_driver.png', format='png')
-    #plt.show()
 
     # Task 1.2.3
 
@@ -129,18 +127,3 @@ def task1_2():
     plt.subplots_adjust(wspace=0.6)
 
     plt.savefig('task1_2_seat.png', format='png')
-    #plt.show()
-
-
-
-
-
-
-
-#task1_2()
-
-
-
-
-
-

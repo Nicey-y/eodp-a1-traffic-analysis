@@ -38,12 +38,9 @@ def task1_1():
     sex_column = rdata["SEX"].values.reshape(-1, 1)
     onehot_encoder1 = OneHotEncoder(sparse_output=False)
     encoded_data1 = onehot_encoder1.fit_transform(sex_column)
-    #print(encoded_data1)
-    #print(onehot_encoder1.categories_)
 
     #Create new columns for SEX_M, SEX_F, SEX_U
     rdata[['SEX_Female', 'SEX_Male', 'SEX_Unknown']] = encoded_data1
-    #print(rdata)
 
 
     # One-Hot-Encoding the ROAD_USER_TYPE_DESC Column
@@ -51,13 +48,11 @@ def task1_1():
     user_column = rdata["ROAD_USER_TYPE_DESC"].values.reshape(-1, 1)
     onehot_encoder2 = OneHotEncoder(sparse_output=False)
     encoded_data2 = onehot_encoder2.fit_transform(user_column)
-    #print(encoded_data2)
-    #print(onehot_encoder2.categories_)
+
 
     #Create new columns
     rdata[['ROAD_USER_DESC_Bicyclists', 'ROAD_USER_DESC_Drivers','ROAD_USER_DESC_E-scooter_Rider','ROAD_USER_DESC_Motorcyclists',
         'ROAD_USER_DESC_Not_Known','ROAD_USER_DESC_Passengers','ROAD_USER_DESC_Pedestrians','ROAD_USER_DESC_Pillion_Passengers']] = encoded_data2
-    #print(rdata)
 
     # Task 1.1.3
 
@@ -84,6 +79,5 @@ def task1_1():
         else: return "Unknown"
 
     rdata["AGE_CATEGORY"] = rdata["AGE_GROUP"].apply(lambda x: converter(x))
-    #print(rdata)
 
     return(rdata)
