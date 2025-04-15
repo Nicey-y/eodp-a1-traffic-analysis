@@ -3,11 +3,7 @@ import re
 import matplotlib.pyplot as plt
 
 def task2_2():
-<<<<<<< HEAD
-    accident = pd.read_csv("/course/accident.csv")
-=======
     accident_df = pd.read_csv("accident.csv")
->>>>>>> e6a660c79da18a6cc39d6e0883a46621a60f9889
 
     # categorizes accident times acc. to TIME_OF_DAY categories
     accident_df['TIME_OF_DAY'] = accident_df['ACCIDENT_TIME'].apply(lambda x: sort_time(x))
