@@ -3,10 +3,10 @@ import re
 import matplotlib.pyplot as plt
 
 def task2_2():
-    accident = pd.read_csv("accident.csv")
+    accident_df = pd.read_csv("accident.csv")
 
     # categorizes accident times acc. to TIME_OF_DAY categories
-    accident['TIME_OF_DAY'] = accident['ACCIDENT_TIME'].apply(lambda x: sort_time(x))
+    accident_df['TIME_OF_DAY'] = accident_df['ACCIDENT_TIME'].apply(lambda x: sort_time(x))
 
     '''
     Plot 1
@@ -15,7 +15,7 @@ def task2_2():
     time_occurrences = {}
 
     # frequency of each TIME_OF_DAY category occurrence
-    for time in accident['TIME_OF_DAY']:
+    for time in accident_df['TIME_OF_DAY']:
         if time not in time_occurrences:
             time_occurrences[time] = 1
         else:
@@ -50,7 +50,7 @@ def task2_2():
     dca_desc_top10_words = []
 
     for time in time_occurrences_df.index:
-        time_filtered = accident[accident['TIME_OF_DAY'] == time]
+        time_filtered = accident_df[accident_df['TIME_OF_DAY'] == time]
         for desc in time_filtered['DCA_DESC']:
 
             split_desc = re.findall(r'\b\w+\b', desc) # tokenize words
@@ -124,7 +124,7 @@ def task2_2():
     '''
 
     # days of the week for which data needs to be shown
-    select_days = accident[accident['DAY_WEEK_DESC'].isin(['Monday', 'Friday', 'Sunday'])]
+    select_days = accident_df[accident_df['DAY_WEEK_DESC'].isin(['Monday', 'Friday', 'Sunday'])]
 
     selected_days_ordered = ['Monday', 'Friday', 'Sunday']
 
