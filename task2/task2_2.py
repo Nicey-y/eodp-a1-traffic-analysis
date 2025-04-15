@@ -3,7 +3,7 @@ import re
 import matplotlib.pyplot as plt
 
 def task2_2():
-    accident = pd.read_csv("a1-datasets/accident.csv")
+    accident = pd.read_csv("/course/accident.csv")
 
     accident_times = accident['ACCIDENT_TIME']
 
@@ -107,11 +107,3 @@ def sort_time(time):
             return "Evening"
         else:
             return "Late Night"
-
-
-
-
-
-
-
-
