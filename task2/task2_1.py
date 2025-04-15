@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 def task2_1():
-    accident = pd.read_csv('accident_subset.csv')
+    accident = pd.read_csv('accident.csv')
     text_columns = ['ACCIDENT_TYPE_DESC', 'DAY_WEEK_DESC', 'DCA_DESC', 'ROAD_GEOMETRY_DESC', 'RMA']
 
     # convert column entries with text to lower case
